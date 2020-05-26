@@ -14,6 +14,14 @@ RUN apt update && apt -y install \
   python3-xcffib \
   python3-cairocffi
 
+# install fpm
+RUN apt -y install \
+  ruby \
+  ruby-dev \
+  rubygems \
+  build-essential && \
+  gem install --no-document fpm
+
 # build script
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

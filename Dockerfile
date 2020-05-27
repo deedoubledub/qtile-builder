@@ -1,7 +1,6 @@
 FROM ubuntu:20.04
 
 VOLUME /build
-VOLUME /release
 
 # make tzdata install non-interactive
 ENV DEBIAN_FRONTEND=noninteractive
@@ -25,5 +24,8 @@ RUN apt -y install \
 # build script
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+
+# add xsession
+COPY ./qtile.desktop /qtile.desktop
 
 ENTRYPOINT ["/entrypoint.sh"]

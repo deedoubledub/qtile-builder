@@ -29,4 +29,8 @@ fpm --input-type dir \
   --depends python3-cairocffi \
   --depends python3-dbus \
   --depends libpangocairo-1.0-0 \
+  --depends libxcb-cursor0 \
+  --deb-suggests python3-psutil \
+  --deb-suggests python3-mpd \
+  --deb-suggests python3-mpd \
   ./usr

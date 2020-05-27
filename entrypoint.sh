@@ -14,7 +14,6 @@ cp /qtile.desktop /build/usr/share/xsessions/qtile.desktop
 cd /build
 fpm --input-type dir \
   --output-type deb \
-  --prefix usr \
   --name qtile \
   --vendor qtile.org \
   --category x11 \

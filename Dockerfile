@@ -7,14 +7,16 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 
 # install build deps
-RUN apt update && apt -y install \
+RUN apt-get update && apt-get -y install \
   python3 \
   python3-pip \
   python3-xcffib \
-  python3-cairocffi
+  python3-cairocffi \
+  python3-cffi \
+  libpulse-dev
 
 # install fpm
-RUN apt -y install \
+RUN apt-get -y install \
   ruby \
   ruby-dev \
   rubygems \

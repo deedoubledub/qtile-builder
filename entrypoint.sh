@@ -6,6 +6,10 @@ rm -rf /build/*
 # install qtile
 pip3 install --prefix /build/usr qtile
 
+# build pulse audio c widget
+cd /usr/local/lib/python3.8/dist-packages
+python3 libqtile/widget/pulseaudio_ffi.py
+
 # move python libs to correct path
 mv /build/usr/lib/python3.8 /build/usr/lib/python3
 mv /build/usr/lib/python3/site-packages /build/usr/lib/python3/dist-packages
